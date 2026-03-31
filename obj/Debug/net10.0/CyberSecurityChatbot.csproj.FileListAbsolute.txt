@@ -16,3 +16,4 @@ C:\Users\mdomb\Downloads\CSharpProjects\CyberSecurityChatbot\obj\Debug\net10.0\r
 C:\Users\mdomb\Downloads\CSharpProjects\CyberSecurityChatbot\obj\Debug\net10.0\CyberSecurityChatbot.pdb
 C:\Users\mdomb\Downloads\CSharpProjects\CyberSecurityChatbot\obj\Debug\net10.0\CyberSecurityChatbot.genruntimeconfig.cache
 C:\Users\mdomb\Downloads\CSharpProjects\CyberSecurityChatbot\obj\Debug\net10.0\ref\CyberSecurityChatbot.dll
+C:\Users\mdomb\Downloads\CSharpProjects\CyberSecurityChatbot\obj\Debug\net10.0\CyberSecurityChatbot.sourcelink.json
