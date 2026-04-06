@@ -29,3 +29,4 @@ namespace CyberSecurityChatbot
         }
     }
 }
+// Displays chatbot logo
