@@ -1,0 +1,44 @@
+name: CI — Build & Test
+
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Build & Verify
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore CybersecurityChatbot.csproj
+
+      - name: Build
+        run: dotnet build CybersecurityChatbot.csproj --configuration Release --no-restore
+
+      - name: Verify output executable exists
+        run: |
+          if (Test-Path "bin/Release/net8.0/CybersecurityChatbot.exe") {
+            Write-Host "✅ Build artifact verified."
+          } else {
+            Write-Error "❌ Executable not found."
+            exit 1
+          }
+        shell: pwsh
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CybersecurityChatbot-Release
+          path: bin/Release/net8.0/
+          retention-days: 7
